@@ -12,13 +12,13 @@
 
 #cat /home/pi/mirrohr/files/home/pi/.ssh/authorized_keys >> /home/pi/.ssh/authorized_keys
 
-sudo cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /root/
-cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /home/pi/
+#sudo cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /root/
+#cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /home/pi/
 
-sudo cp /home/pi/mirrohr/files/etc/motd /etc
-sudo cp -r /home/pi/mirrohr/files/etc/update-motd.d/* /etc/update-motd.d/
+#sudo cp /home/pi/mirrohr/files/etc/motd /etc/
+#sudo cp -r /home/pi/mirrohr/files/etc/update-motd.d/* /etc/update-motd.d/
 
-sudo cp /home/pi/mirrohr/files/etc/splash.png /etc/
+#sudo cp /home/pi/mirrohr/files/etc/splash.png /etc/
 
 sudo rm -r /var/www/html/*
 sudo cp /home/pi/mirrohr/html.tar /var/www/html/
@@ -33,11 +33,6 @@ sudo mysql -u root < /home/pi/mirrohr/mirrohr.sql
 sudo service mysql restart
 sudo mysql_upgrade --force
 sudo service mysql restart
-#sudo cp /home/pi/mirrohr/database.tar /var/lib/mysql/
-#cd /var/lib/mysql/
-#sudo tar -xpf database.tar
-#sudo rm database.tar
-#cd /home/pi/mirrohr/
 
 sudo cp -r /home/pi/mirrohr/files/* /
 sudo systemctl daemon-reload
