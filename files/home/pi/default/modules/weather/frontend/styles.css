@@ -1,0 +1,10 @@
+.weathermodule svg {
+  height: 38px;
+  width: 38px; }
+.weathermodule table {
+  width: 80%; }
+.weathermodule td {
+  padding-top: 0; }
+
+.weathermodule__day {
+  font-weight: bold; }

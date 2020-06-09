@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# script for making a mirrohr
+
+#if [ ! -d /home/pi/.ssh ]; then
+#	mkdir /home/pi/.ssh
+#fi
+
+#if [ ! -f /home/pi/.ssh/authorized_keys ]; then
+#	touch /home/pi/.ssh/authorized_keys
+#fi
+
+#cat /home/pi/mirrohr/files/home/pi/.ssh/authorized_keys >> /home/pi/.ssh/authorized_keys
+
+sudo cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /root/
+cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /home/pi/
+
+sudo cp /home/pi/mirrohr/files/etc/motd /etc
+sudo cp -r /home/pi/mirrohr/files/etc/update-motd.d/* /etc/update-motd.d/
+
+sudo cp /home/pi/mirrohr/files/etc/splash.png /etc/
+
+sudo rm -r /var/www/html/*
+sudo cp /home/pi/mirrohr/html.tar /var/www/html/
+cd /var/www/html/
+sudo tar -xpf html.tar
+sudo rm /var/www/html/html.tar
+cd /home/pi/mirrohr/
+sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+
+sudo sed -i 's/bind-address/# bind-address/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+sudo mysql -u root < /home/pi/mirrohr/mirrohr.sql
+sudo service mysql restart
+sudo mysql_upgrade --force
+sudo service mysql restart
+#sudo cp /home/pi/mirrohr/database.tar /var/lib/mysql/
+#cd /var/lib/mysql/
+#sudo tar -xpf database.tar
+#sudo rm database.tar
+#cd /home/pi/mirrohr/
+
+sudo cp -r /home/pi/mirrohr/files/* /
+sudo systemctl daemon-reload
+sudo systemctl enable raspberrypi-net-mods.service
+sudo systemctl enable raspberrypi-static-net-mods.service
+sudo systemctl enable mirrohr-screen.service
+
+if [ ! -f /boot/dhcpcd.conf ]; then
+	sudo cp /etc/dhcpcd.conf /boot/
+fi
+
+if [ ! -f /boot/wpa_supplicant.conf ]; then
+	sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /boot/
+fi
+sudo locale-gen de_DE.UTF-8
+sudo locale-gen en_GB.UTF-8
+sudo locale-gen es_ES.UTF-8
+sudo locale-gen fr_FR.UTF-8
+sudo locale-gen ja_JP.UTF-8
+sudo update-locale de_DE.UTF-8
+sudo timedatectl set-timezone Europe/Berlin
+#sudo /home/pi/kernel/kernel-update
+sudo sed -i 's/raspberrypi/mirrohr/g' /etc/hosts
+sudo su 
+echo "192.168.8.1     mirrohr.conf www.mirrohr.conf" >> /etc/hosts
+exit
+sudo sed -i 's/raspberrypi/mirrohr/g' /etc/hostname
+sudo reboot

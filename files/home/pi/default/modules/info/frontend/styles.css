@@ -1,0 +1,92 @@
+.infomodule {
+  margin-bottom: 70px; }
+  .infomodule > div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
+.infomodule svg {
+    bottom: -10px;
+    max-width: 70px; }
+
+.infomodule__time,
+.infomodule__temperature {
+  font-size: 90px;
+  line-height: 90px; }
+
+.infomodule__temperature {
+  height: 100px; }
+
+.infomodule__date {
+  font-size: 33px;
+  line-height: 40px; }
+
+.infomodule__weather {
+  font-size: 24px;
+  line-height: 29px;
+  height: 34px; }
+
+.infomodule__today {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  line-height: 28px;
+  margin-top: 52px; }
+.infomodule__today div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%; }
+.infomodule__today span {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+.infomodule__today svg {
+    height: 38px;
+    bottom: 0; }
+
+.infomodule__today--justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.infomodule__today--right {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+.infomodule__today--right span, .infomodule__today--right b {
+    margin-left: 5%; }
+    
+.seconds {
+	font-size: xx-large;
+    margin: -12px 5px;
+    float: right;}
+
+@media screen and (orientation: landscape) {
+    .module__fullwidth.infomodule {
+        width: 100%;
+        margin-bottom: 0.5vh;
+    }
+    .infomodule .infomodule__today {
+        margin-top: 26px;
+    }
+}

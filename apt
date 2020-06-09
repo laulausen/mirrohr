@@ -1,0 +1,27 @@
+#!/bin/bash
+arguments="'$*'"
+#echo $0
+#echo "arguments: "$arguments
+
+#installed=( $( cat /home/pi/mirrohr/installed_packages ) )
+#for i in "${installed[@]}"
+#do
+#	if [[ $arguments =~ " $i " ]]; then
+#		echo "never change a running mirrohr!!"
+#		echo "arguments: "$arguments
+#		echo "installed: "$i
+#		exit
+#	fi
+#done
+
+if [[ $arguments == *"upgrade"* ]]; then
+	echo "never change a running mirrohr!!"
+#	echo "arguments: "$arguments
+	exit
+fi
+#echo $0 $1
+if [ $(whoami) = "root" ]; then
+	/usr/bin/apt "$arguments"
+else
+	echo "permissions denied"
+fi

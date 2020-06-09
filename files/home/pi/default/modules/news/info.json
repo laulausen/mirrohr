@@ -1,0 +1,27 @@
+{
+    "module": {
+        "name": "news",
+        "version": "2.0.2",
+        "description": "Ein RSS-Newsfeed Grabber",
+        "module_url": "http:\/\/glancr.de\/module\/produktivitaet\/news\/",
+        "download_url": "https:\/\/api.glancr.de\/update\/moduleZips\/news-2.0.0.zip",
+        "category": "Info",
+        "last_update": "2018-02-27"
+    },
+    "creator": {
+        "multiple": true,
+        "name": [
+            "Tobias Grasse",
+            "Mattes Angelus"
+        ],
+        "contact": [
+            "tg@glancr.de",
+            "ma@glancr.de"
+        ],
+        "website": "https:\/\/www.glancr.de",
+        "profile": [
+            "http:\/\/glancr.de\/entwickler\/tobias-grasse\/",
+            "https:\/\/www.glancr.de\/entwickler\/mattes-angelus\/"
+        ]
+    }
+}

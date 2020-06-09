@@ -1,0 +1,17 @@
+{
+    "module": {
+        "name": "info",
+        "version": "1.2.0",
+        "description": "Die wichtigsten Infos auf einen Blick: Datum + Uhrzeit und Wetter",
+        "module_url": "https:\/\/www.glancr.de\/profiles\/mattes\/info",
+        "download_url": "https:\/\/www.glancr.de\/profiles\/mattes\/info\/info.zip",
+        "category": "Kernmodule",
+        "last_update": "2018-03-05"
+    },
+    "creator": {
+        "name": "Mattes Angelus",
+        "contact": "ma@glancr.de",
+        "website": "https:\/\/glancr.de",
+        "profile": "https:\/\/www.glancr.de\/profiles\/mattes"
+    }
+}

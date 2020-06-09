@@ -1,0 +1,13 @@
+[Unit]
+Description = Load bcm2835 Module
+After = sound.target
+
+[Service]
+User = root
+Group = root
+Type = simple
+ExecStart = modprobe snd-bcm2835
+
+[Install]
+WantedBy = multi-user.target
+

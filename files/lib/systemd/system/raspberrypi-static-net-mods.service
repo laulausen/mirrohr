@@ -1,0 +1,12 @@
+[Unit] Description=Copy user dhcpcd.conf 
+ConditionPathExists=/boot/dhcpcd.conf 
+Before=dhcpcd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/cp /boot/dhcpcd.conf /etc/dhcpcd.conf
+ExecStartPost=/bin/chmod 660 /etc/dhcpcd.conf
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+auto wlan0
+iface wlan0 inet static
+	hostapd /etc/hostapd/hostapd.conf
+	pre-up service dnsmasq start; touch /var/www/html/tmp/ap-clients.log
+	address 192.168.8.1
+	netmask 255.255.255.0
+	dns-servers 192.168.8.1
+	post-up sleep 5; hostapd_cli -a /home/pi/hostapd_client_watcher.sh &
+	pre-down killall hostapd_cli && service dnsmasq stop
+	post-down rm /var/www/html/tmp/ap-clients.log; truncate --size 0 /var/log/apache2/glancr_conf_access.log 

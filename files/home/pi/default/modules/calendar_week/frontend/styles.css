@@ -1,0 +1,31 @@
+#calendar_week_table {
+	width: 100%;
+}
+
+#calendar_week_table td:first-child {
+	min-width: 40px;
+	max-width: 40px;
+	font-weight: bold !important;
+}
+
+#calendar_week_table td {
+	overflow: hidden;
+  	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 10px 5px 0;
+	vertical-align:baseline;
+	vertical-align:middle;
+	border-bottom: 1px solid #666;
+}
+
+#calendar_week_table tr:first-child {
+	font-weight: bold !important;
+}
+
+#calendar_week_table tr:last-child td {
+	border-bottom: 0;
+}
+
+#calendar_week_table tr {
+	height: 40px;
+}

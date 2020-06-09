@@ -1,0 +1,50 @@
+# mirr.OS v0.1.2.
+# Copyright (C) 2016
+# This file is distributed under the same license as the PACKAGE package.
+# mattes <ma@glancr.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mirr.OS v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 10:20+0100\n"
+"PO-Revision-Date: 2018-01-18 18:28+0100\n"
+"Last-Translator: Tobias Grasse <tg@glancr.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.5\n"
+"Language: ja_JP\n"
+
+msgid "calendar_next_title"
+msgstr "次"
+
+msgid "calendar_next_description"
+msgstr "次の予定"
+
+msgid "calendar url input"
+msgstr "カレンダーのURLを入力してください"
+
+msgid "no events message"
+msgstr "予定はありません"
+
+msgid "calendar tutorial link"
+msgstr ""
+"ここで <a href=\"http://glancr.de/tutorials/das-"
+"kalendermodul-konfigurieren/\" target=\"_blank\">カレンダー"
+"モジュールの設定方法</a>がわかります。"
+
+msgid "calendar example"
+msgstr "（例：iCal、Googleカレンダー、Mozilla Thunderbird）"
+
+msgid "validate"
+msgstr "有効"
+
+msgid "invalid calendar url"
+msgstr "無効なカレンダーURL"
+
+msgid "add"
+msgstr "追加"

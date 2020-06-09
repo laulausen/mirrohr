@@ -1,0 +1,41 @@
+# mirr.OS v0.1.2.
+# Copyright (C) 2016
+# This file is distributed under the same license as the PACKAGE package.
+# mattes <ma@glancr.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mirr.OS v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 10:20+0100\n"
+"PO-Revision-Date: 2018-01-18 18:35+0100\n"
+"Last-Translator: Tobias Grasse <tg@glancr.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.6\n"
+"Language: ja_JP\n"
+
+msgid "news_title"
+msgstr "News"
+
+msgid "news_description"
+msgstr "最新ニュース"
+
+msgid "news feed url input"
+msgstr "ニュースフィードのURLを入力してください。"
+
+msgid "news example"
+msgstr "（例：http://rss.kicker.de/team/1fcunionberlin）"
+
+msgid "validate"
+msgstr "有効"
+
+msgid "invalid feed url"
+msgstr "無効なURL"
+
+msgid "enable glancrNews"
+msgstr "Glancrのニュースを表示する"

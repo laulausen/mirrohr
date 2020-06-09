@@ -1,0 +1,17 @@
+{
+    "module": {
+        "name": "calendar_week",
+        "version": "1.0.2",
+        "description": "Bis zu 5 Kalenderstreams in der Wochen\u00fcbersicht.",
+        "module_url": "https:\/\/www.glancr.de\/profiles\/mattes\/calendar_week",
+        "download_url": "https:\/\/www.glancr.de\/profiles\/mattes\/calendar_week\/calendar_week.zip",
+        "category": "Pers\u00f6nliche Infos",
+        "last_update": "2018-01-23"
+    },
+    "creator": {
+        "name": "Mattes Angelus",
+        "contact": "ma@glancr.de",
+        "website": "https:\/\/glancr.de",
+        "profile": "https:\/\/www.glancr.de\/profiles\/mattes"
+    }
+}

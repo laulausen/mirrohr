@@ -1,0 +1,67 @@
+# mirr.OS v0.1.2.
+# Copyright (C) 2016
+# This file is distributed under the same license as the PACKAGE package.
+# mattes <ma@glancr.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mirr.OS v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 10:20+0100\n"
+"PO-Revision-Date: 2016-06-16 16:53+0100\n"
+"Last-Translator: gorbo <info@gorbo.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: en_GB\n"
+
+msgid "weather_title"
+msgstr "Weather"
+
+msgid "weather_description"
+msgstr "Weather forecast for the following 4 days."
+
+msgid "owm api key input"
+msgstr "Enter OpenWeatherMap Api-Key."
+
+msgid "animated weather icons"
+msgstr "Animated weather icons"
+
+msgid "not animated weather icons"
+msgstr "Non-animated weather icons."
+
+msgid "owm api key link"
+msgstr ""
+"This is where you get your <a href=\"http://openweathermap.org/appid\" "
+"target=\"_blank\">openweather Api-Key</a>."
+
+msgid "owm api key example"
+msgstr "(e.g.: c863d93d1c7ff4ef9bace44847e40e98)"
+
+msgid "which city?"
+msgstr "Which city do you want to know the weather for?"
+
+msgid "validate"
+msgstr "validate"
+
+msgid "invalid owm key"
+msgstr "invalid OpenWeatherMap Api-Key"
+
+msgid "temperature in celsius"
+msgstr "temperatures in degrees Celsius"
+
+msgid "temperature in fahrenheit"
+msgstr "temperatures in degrees Fahrenheit"
+
+msgid "temperature in Kelvin"
+msgstr "temperatures in Kelvin"
+
+msgid "temperature unit"
+msgstr "temperature unit"
+
+msgid "show today"
+msgstr "show today"

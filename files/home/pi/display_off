@@ -1,0 +1,3 @@
+#!/bin/sh
+fbset -accel false
+tvservice -o

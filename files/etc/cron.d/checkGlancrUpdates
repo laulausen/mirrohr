@@ -1,0 +1,1 @@
+*/15 * * * * www-data php /var/www/html/cron.php > /dev/null

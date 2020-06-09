@@ -1,0 +1,13 @@
+[settings]
+default-encoding=ISO-8859-1
+enable-site-specific-quirks=true
+enable-javascript=true
+default-charset=ISO-8859-1
+last-window-width=1080
+last-window-height=1920
+show-statusbar=false
+toolbar-items=Back,Forward,ReloadStop,Location,Homepage,Preferences
+homepage=http://localhost/nonet.php
+tabhome=about:dial
+download-folder=/home/pi
+user-agent=Mozilla/5.0 (X11; Linux) AppleWebKit/538.15 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/538.15 Midori/0.5

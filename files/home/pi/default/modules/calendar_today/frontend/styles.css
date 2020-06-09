@@ -1,0 +1,17 @@
+#calendar_today_table {
+	width: 100%;
+}
+
+#calendar_today_table td:first-child {
+	width: 15%;
+	font-weight: bold;
+	padding: 0;
+	vertical-align:baseline;
+}
+
+#calendar_today_table td:nth-child(2) {
+	overflow: hidden;
+  	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}

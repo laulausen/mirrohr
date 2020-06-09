@@ -1,0 +1,123 @@
+.infomodule {
+  margin-bottom: --20px; } /*Gesamthöhe*/
+  .infomodule > div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
+.infomodule img{
+    width: 20px;
+   margin: 0px 0px -10px 0px; }
+
+.infomodule svg {
+    bottom: -10px;
+    max-width: 70px; }
+
+.infomodule__time,
+.infomodule__temperature {
+  font-size: 100px;
+  line-height: 0px; }
+
+.infomodule__temperature {
+  height: 80px; }
+
+.infomodule__date {
+  font-size: 33px;
+  line-height: 0px; }
+
+.infomodule__weather {
+  font-size: 24px;
+  line-height: 100px;
+  height: 34px;
+}
+
+#heute {
+  /*border-top:1px solid #900000;*/
+  /*border-bottom: 1px solid #6D0000;*/
+  line-height: 28px;
+  margin-top: 42px; }
+.nfomodule__today div {  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width:50%;
+ }
+.nfomodule__today span {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+.infomodule__today svg {
+    height: 50px;
+}
+#forecastTemp {
+  margin-right: 5px;
+}
+
+.forecastTime {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.infomodule__today--justify {
+   margin-bottom: 10px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.infomodule__today--right {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+.infomodule__today--right span, .infomodule__today--right b {
+    margin-left: 5px; }
+    
+.seconds {
+    font-size: xx-large;
+    margin: -12px 5px;
+    float: right;}
+.home {
+
+//    float: left;
+
+/*    margin:0px 0px 0px 20px; */
+        font-size: 55px;
+    margin: 8px 0px 8px 4px;
+}
+#homeTemp {
+    margin: 0px 5px 10px 1px;
+    width: 80px;
+}
+#homeTempEinheit {
+    margin: 0px 0px 8px 0px;
+} 
+#home_icon {
+    width: 70px;
+    margin: 0px 10px 0px 10px;
+}
+tatus_icon {
+    width: 40px;
+    height:40px;
+}
+.aussicht {
+    margin-right: 10px;
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo cp /etc/network/interfaces.wlan /etc/network/interfaces
+sudo cp /etc/rc.local /etc/rc.nomirrohr
+sudo cp /etc/rc.mirrohr /etc/rc.local
+sudo reboot
+
+

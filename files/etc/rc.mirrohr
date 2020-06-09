@@ -1,0 +1,70 @@
+#!/bin/bash
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+#tvservice -d /home/pi/edid.dat
+#if [ "$(diff -s /home/pi/edid.dat /boot/edid.dat)" = "Files /home/pi/edid.dat and /boot/edid.dat are identical" ]; then
+#  rm /home/pi/edid.dat
+#else
+#  mv /home/pi/edid.dat /boot/edid.dat
+#  reboot
+#  exit
+#fi
+
+_IP=$(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+if [ "$_IP" = "127.0.0.1" ]; then
+        _IP=""
+fi
+
+for((i=0; i<5; i++))
+do
+  if [ -e /var/run/mysqld/mysqld.sock ]; then
+    _CONN=$(/usr/bin/mysql --defaults-file=/etc/mysql/my.cnf -u mirrohr -pmirrohr mirrohr -e "SELECT \`value\` FROM \`configuration\` WHERE \`key\`='connectionType'"| cut -f 3 -d " " | sed -n 2p)
+    if [[ $_CONN = "wlan" ]]; then
+      _IP=$(ip -f inet -o addr show wlan0|cut -d\  -f 7 | cut -d/ -f 1) ||  true
+      iwlist wlan0 scan | grep ESSID | cut -d "\"" -f 2 > /var/www/html/wlans.txt
+    else
+      _IP=$(ip -f inet -o addr show eth0|cut -d\  -f 7 | cut -d/ -f 1) ||  true
+    fi
+    if [[ $_IP ]]; then
+      break
+    fi
+  else
+    echo "mysql connection not yet there, retrying"
+  fi
+  sleep 3
+done
+
+
+if [ ! "$_IP" ]; then
+
+	ifdown wlan0
+	PW=$(pwgen -N 1 -B 8)
+	sed -i -e 8c"wpa_passphrase=$PW" /etc/hostapd/hostapd.conf
+	echo $PW > /var/www/html/appass.txt
+	qrencode -t png -d 256 -o /var/www/html/ap-qr.png 'WIFI:S:MIRROHR;T:WPA2;P:'$PW';'
+	chown www-data:www-data /var/www/html/appass.txt /var/www/html/ap-qr.png
+
+	cp /etc/network/interfaces.ap /etc/network/interfaces
+	ifup wlan0
+	xinit /home/pi/startBrowser.sh nonet.php -- -nocursor &
+
+elif [ "$_IP" = "192.168.8.1" ]; then
+
+	xinit /home/pi/startBrowser.sh nonet.php -- -nocursor &
+
+else
+	xinit /home/pi/startBrowser.sh glancr/index.php?ip=$_IP -- -nocursor &
+fi
+
+exit 0
+
