@@ -1,4 +1,5 @@
 #!/bin/sh
-sudo apt update
-sudo apt install -y php7.1 php7.1-bz2 php7.1-curl php7.1-gd php7.1-intl php7.1-mysql php7.1-soap php7.1-xml php7.1-zip php-cli-prompt php-composer-ca-bundle php-composer-semver php-composer-spdx-licenses php-json-schema php-symfony-console php-symfony-filesystem php-symfony-finder php-symfony-polyfill-mbstring php-symfony-process mariadb-server chromium-browser xinit matchbox qrencode hostapd dnsmasq fbi geoclue-2.0 xserver-xorg-video-fbdev xserver-xorg-video-fbturbo xterm libgles2 libgles2-mesa-dev libraspberrypi-dev libraspberrypi0 libraspberrypi-bin pwgen
-
+#sudo apt update
+sudo apt install -y php7.1 php7.1-bz2 php7.1-curl php7.1-gd php7.1-intl php7.1-mysql php7.1-soap php7.1-xml php7.1-zip php-cli-prompt php-composer-ca-bundle php-composer-semver php-composer-spdx-licenses php-json-schema php-symfony-console php-symfony-filesystem php-symfony-finder php-symfony-polyfill-mbstring php-symfony-process mariadb-server chromium-browser xinit matchbox qrencode hostapd dnsmasq fbi geoclue-2.0 xserver-xorg-video-fbdev xserver-xorg-video-fbturbo xterm libgles2 libgles2-mesa-dev libraspberrypi-dev libraspberrypi0 libraspberrypi-bin pwgen gldriver-test
+sudo cp /home/pi/mirrohr/rc.make-a-mirrohr /etc/rc.local
+sudo reboot

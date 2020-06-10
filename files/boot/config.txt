@@ -62,9 +62,13 @@ disable_splash=1
 pragram_usb_boot_mode=1
 gpio=0-21=np
 #arm_64bit=1
-#kernel=kernel8_Rpi3.img
 start_x=1
 gpu_mem=256
-#dtoverlay=vc4-fkms-v3d,cma-256
+
+[pi4]
+# Enable DRM VC4 V3D driver on top of the dispmanx display stack
+dtoverlay=vc4-fkms-v3d
+max_framebuffers=2
+
 [all]
 dtoverlay=vc4-kms-v3d,cma-256
