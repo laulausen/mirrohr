@@ -11,12 +11,12 @@
 #
 # By default this script does nothing.
 
-# xinit /home/pi/startBrowser.sh glancr/index.php -- -nocursor &
+xinit /home/pi/startBrowser.sh glancr/index.php -- -nocursor &
 
 ###### shutdown- / reboot-button ######
 # /usr/bin/python /home/pi/buttons.py &
 #######################################
 
-bs-resize &
+#bs-resize &
 exit 0
 
