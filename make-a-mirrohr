@@ -61,4 +61,5 @@ fi
 #echo "192.168.8.1     mirrohr.conf www.mirrohr.conf" >> /etc/hosts
 #exit
 #sudo sed -i 's/raspberrypi/mirrohr/g' /etc/hostname
+sudo cp /etc/splash_1_right.png /etc/splash.png
 sudo reboot
