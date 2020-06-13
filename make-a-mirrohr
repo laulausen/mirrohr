@@ -28,11 +28,12 @@ sudo rm /var/www/html/html.tar
 cd /home/pi/mirrohr/
 sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
+sudo systemctl stop mysql.service
 sudo sed -i 's/bind-address/# bind-address/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 sudo mysql -u root < /home/pi/mirrohr/mirrohr.sql
-sudo service mysql restart
+#sudo service mysql restart
 sudo mysql_upgrade --force
-sudo service mysql restart
+#sudo service mysql restart
 
 sudo locale-gen de_DE.UTF-8
 sudo locale-gen en_GB.UTF-8
@@ -44,6 +45,7 @@ sudo timedatectl set-timezone Europe/Berlin
 
 sudo cp -r /home/pi/mirrohr/files/* /
 sudo systemctl daemon-reload
+sudo systemctl start mysql.service
 sudo systemctl enable raspberrypi-net-mods.service
 sudo systemctl enable raspberrypi-static-net-mods.service
 sudo systemctl enable mirrohr-screen.service
