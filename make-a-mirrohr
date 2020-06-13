@@ -29,16 +29,13 @@ sudo rm /var/www/html/html.tar
 cd /home/pi/mirrohr/
 sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
+sudo locale-gen
+sudo update-locale de_DE.UTF-8
+sudo timedatectl set-timezone Europe/Berlin
+
 sudo mysql -u root < /home/pi/mirrohr/mirrohr.sql
 sudo mysql_upgrade --force
 
-sudo locale-gen de_DE.UTF-8
-sudo locale-gen en_GB.UTF-8
-sudo locale-gen es_ES.UTF-8
-sudo locale-gen fr_FR.UTF-8
-sudo locale-gen ja_JP.UTF-8
-sudo update-locale de_DE.UTF-8
-sudo timedatectl set-timezone Europe/Berlin
 
 sudo systemctl stop mysql.service
 sudo sed -i 's/bind-address/# bind-address/g' /etc/mysql/mariadb.conf.d/50-server.cnf
