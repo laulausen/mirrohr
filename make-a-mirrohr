@@ -2,23 +2,6 @@
 
 # script for making a mirrohr
 
-#if [ ! -d /home/pi/.ssh ]; then
-#	mkdir /home/pi/.ssh
-#fi
-
-#if [ ! -f /home/pi/.ssh/authorized_keys ]; then
-#	touch /home/pi/.ssh/authorized_keys
-#fi
-
-#cat /home/pi/mirrohr/files/home/pi/.ssh/authorized_keys >> /home/pi/.ssh/authorized_keys
-
-#sudo cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /root/
-#cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /home/pi/
-
-#sudo cp /home/pi/mirrohr/files/etc/motd /etc/
-#sudo cp -r /home/pi/mirrohr/files/etc/update-motd.d/* /etc/update-motd.d/
-
-#sudo cp /home/pi/mirrohr/files/etc/splash.png /etc/
 sudo systemctl stop apache2.service
 
 sudo rm -r /var/www/html/*
@@ -29,6 +12,7 @@ sudo rm /var/www/html/html.tar
 cd /home/pi/mirrohr/
 sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
+sudo cp -r /home/pi/mirrohr/locales/* /etc/
 sudo locale-gen
 sudo update-locale de_DE.UTF-8
 sudo timedatectl set-timezone Europe/Berlin
@@ -55,11 +39,6 @@ fi
 if [ ! -f /boot/wpa_supplicant.conf ]; then
 	sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /boot/
 fi
-#sudo /home/pi/kernel/kernel-update
-#sudo sed -i 's/raspberrypi/mirrohr/g' /etc/hosts
-#sudo su 
-#echo "192.168.8.1     mirrohr.conf www.mirrohr.conf" >> /etc/hosts
-#exit
-#sudo sed -i 's/raspberrypi/mirrohr/g' /etc/hostname
 sudo cp /etc/splash_1_right.png /etc/splash.png
+sudo cp -r /home/pi/mirrohr/kernel/* /
 sudo reboot
