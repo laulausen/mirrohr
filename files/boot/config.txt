@@ -55,7 +55,7 @@ hdmi_force_hotplug=1
 
 # Enable audio (loads snd_bcm2835)
 dtparam=audio=on
-display_rotate=3
+display_rotate=1
 
 disable_splash=1
 #hdmi_edid_file=1
