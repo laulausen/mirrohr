@@ -1,0 +1,22 @@
+#calendar_next_table {
+	width: 100%;
+}
+
+#calendar_next_table td:first-child {
+	width: 15%;
+	font-weight: bold;
+}
+
+#calendar_next_table td:nth-child(2) {
+	overflow: hidden;
+  	display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+#calendar_next_table td:nth-child(3) {
+	width: 15%;
+	text-align: right;
+	padding: 0;
+	vertical-align:baseline;
+}

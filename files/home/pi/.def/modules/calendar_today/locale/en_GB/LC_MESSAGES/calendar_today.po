@@ -1,0 +1,49 @@
+# mirr.OS v0.1.2.
+# Copyright (C) 2016
+# This file is distributed under the same license as the PACKAGE package.
+# mattes <ma@glancr.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mirr.OS v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 10:20+0100\n"
+"PO-Revision-Date: 2016-04-17 18:35+0100\n"
+"Last-Translator: gorbo <info@gorbo.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: en_GB\n"
+
+msgid "calendar_today_title"
+msgstr "Today"
+
+msgid "calendar_today_description"
+msgstr "Today's appointments "
+
+msgid "calendar url input"
+msgstr "Calendar url input"
+
+msgid "no events message"
+msgstr "Nothing is going on."
+
+msgid "calendar tutorial link"
+msgstr ""
+"This is where you learn how to <a href=\"http://glancr.de/tutorials/das-"
+"kalendermodul-konfigurieren/\" target=\"_blank\">find your calendar feed</a>."
+
+msgid "calendar example"
+msgstr "(e.g.: iCal, Google calendar, Mozilla thunderbird)"
+
+msgid "validate"
+msgstr "validate"
+
+msgid "invalid calendar url"
+msgstr "invalid calendar url"
+
+msgid "add"
+msgstr "add"

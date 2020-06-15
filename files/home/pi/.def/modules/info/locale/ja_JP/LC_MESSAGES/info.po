@@ -1,0 +1,79 @@
+# mirr.OS v0.1.2.
+# Copyright (C) 2016
+# This file is distributed under the same license as the PACKAGE package.
+# mattes <ma@glancr.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mirr.OS v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 10:20+0100\n"
+"PO-Revision-Date: 2018-01-18 18:34+0100\n"
+"Last-Translator: Tobias Grasse <tg@glancr.de>\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.6\n"
+
+msgid "info_title"
+msgstr "情報"
+
+msgid "info_description"
+msgstr "日付・時間・今日の天気"
+
+msgid "owm api key input"
+msgstr "OpenWeatherMap Api-Keyと入力します。"
+
+msgid "12-hour timekeeping"
+msgstr "12時間表示"
+
+msgid "24-hour timekeeping"
+msgstr "24時間表示"
+
+msgid "animated weather icons"
+msgstr "アニメーション天気アイコン"
+
+msgid "not animated weather icons"
+msgstr "天気アイコン"
+
+msgid "owm api key link"
+msgstr ""
+"ここから<a href=\"http://openweathermap.org/appid\" target="
+"\"_blank\">openweather Api-Key</a>を取得できます。"
+
+msgid "owm api key example"
+msgstr "（例：c863d93d1c7ff4ef9bace44847e40e98）"
+
+msgid "which city?"
+msgstr "どこの天気が知りたいですか？"
+
+msgid "validate"
+msgstr "有効"
+
+msgid "invalid owm key"
+msgstr "このOpenWeatherMap Api-Keyは無効です"
+
+msgid "temperature in celsius"
+msgstr "温度（摂氏）"
+
+msgid "temperature in fahrenheit"
+msgstr "温度（華氏）"
+
+msgid "temperature in Kelvin"
+msgstr "ケルビンの温度"
+
+msgid "time format"
+msgstr "時間表記"
+
+msgid "temperature unit"
+msgstr "気温の測定単位"
+
+msgid "include netatmo values"
+msgstr "info-moduleでNetatmoの値を使う"
+
+msgid "not include netatmo values"
+msgstr "info-moduleでNetatmoの値を使わない"

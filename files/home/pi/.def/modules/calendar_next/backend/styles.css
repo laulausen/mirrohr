@@ -1,0 +1,32 @@
+.calendar_next {
+	display: inline-block; 
+	margin:5px 0 0 5px;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+
+.calendar_next__edit {
+	margin-left:5px;
+}
+
+.calendar_next__delete {
+	position: absolute; 
+	right: 30px;
+}
+
+.parent_calendar_next_timeShift {
+	overflow: hidden;
+	display: inline-block;
+}
+
+#new_calendar_next_timeShift {
+	width: 25px;
+	height: 30px;
+}
+
+#new_calendar_next {
+	float: left;
+	width:125px;
+	margin-right:10px;
+}

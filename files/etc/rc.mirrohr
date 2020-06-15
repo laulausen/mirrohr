@@ -56,14 +56,14 @@ if [ ! "$_IP" ]; then
 
 	cp /etc/network/interfaces.ap /etc/network/interfaces
 	ifup wlan0
-	xinit /home/pi/startBrowser.sh nonet.php -- -nocursor &
+	xinit /usr/local/bin/startBrowser.sh nonet.php -- -nocursor &
 
 elif [ "$_IP" = "192.168.8.1" ]; then
 
-	xinit /home/pi/startBrowser.sh nonet.php -- -nocursor &
+	xinit /usr/local/bin/startBrowser.sh nonet.php -- -nocursor &
 
 else
-	xinit /home/pi/startBrowser.sh glancr/index.php?ip=$_IP -- -nocursor &
+	xinit /usr/local/bin/startBrowser.sh glancr/index.php?ip=$_IP -- -nocursor &
 fi
 
 exit 0

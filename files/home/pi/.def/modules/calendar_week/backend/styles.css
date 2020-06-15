@@ -1,0 +1,62 @@
+.fi-pencil {
+	color: #0a0a0a;
+}
+
+.calendar_week_entry {
+	border: 1px solid #ddd; 
+	height: 35px;
+}
+
+.calendar_week {
+	display: inline-block; 
+	margin:5px 0 0 5px;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+
+.calendar_week__edit {
+	margin-left:5px;
+	color: #0a0a0a;
+}
+
+.calendar_week__delete {
+	position: absolute; 
+	right: 30px;
+}
+
+.parent_calendar_week_timeShift {
+	overflow: hidden;
+	display: inline-block;
+}
+
+#new_calendar_week_timeShift {
+	width: 25px;
+	height: 30px;
+}
+#new_calendar_week_label {
+    width: calc(25% - 43px);
+    float: left;
+    margin-right: 10px !important;
+}
+    
+#new_calendar_week {
+    float: left;
+    width: 125px;
+    width: calc(75% - 43px) !important;
+    margin-right: 10px;
+}
+    
+@media only screen and (max-width: 470px) {
+    #new_calendar_week_label {
+        width: 100%;
+        float: none;
+        margin-right: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    #new_calendar_week {
+        width: calc(100% - 71px) !important;
+        margin-right: 5px;
+    }
+}

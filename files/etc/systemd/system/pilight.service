@@ -1,0 +1,11 @@
+[Unit]
+Description=pilight
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/sbin/pilight-daemon -S 192.168.178.54 -C /home/pi/.mirrohr/configs/pilight_config.json
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+

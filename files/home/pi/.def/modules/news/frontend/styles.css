@@ -1,0 +1,39 @@
+.newsmodule ul {
+  padding: 0; }
+
+[class^="newsmodule__source"] {
+  padding-left: 35px;
+  position: relative; }
+
+.newsmodule li {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-height:56px;}
+
+.newsmodule li img {
+    height: 1rem;
+    filter: saturate(0) grayscale(100%) invert(100%);
+}
+
+[class^="newsmodule__source"]:before {
+  display: inline-block;
+  content: '';
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.newsmodule__source--twitter:before {
+  background-image: url("../assets/twitter.svg"); }
+
+.newsmodule__source--rss:before {
+  background-image: url("../assets/rss.svg"); }
+
+.newsmodule__source--glancr:before {
+  background-image: url("../assets/glancr.svg");
+  color: white; }  

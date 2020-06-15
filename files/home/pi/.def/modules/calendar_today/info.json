@@ -1,0 +1,17 @@
+{
+    "module": {
+        "name": "calendar_today",
+        "version": "1.1.0",
+        "description": "Kalendertermine des heutigen Tages",
+        "module_url": "https:\/\/www.glancr.de\/profiles\/mattes\/calendar_today",
+        "download_url": "https:\/\/www.glancr.de\/profiles\/mattes\/calendar_today\/calendar_today.zip",
+        "category": "Pers\u00f6nliche Infos",
+        "last_update": "2018-02-26"
+    },
+    "creator": {
+        "name": "Mattes Angelus",
+        "contact": "ma@glancr.de",
+        "website": "https:\/\/glancr.de",
+        "profile": "https:\/\/www.glancr.de\/profiles\/mattes"
+    }
+}

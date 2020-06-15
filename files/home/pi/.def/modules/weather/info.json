@@ -1,0 +1,17 @@
+{
+    "module": {
+        "name": "weather",
+        "version": "1.1.0",
+        "description": "Wetterdaten von OpenWeatherMap.org",
+        "module_url": "https:\/\/www.glancr.de\/profiles\/mattes\/weather",
+        "download_url": "https:\/\/www.glancr.de\/profiles\/mattes\/weather\/weather.zip",
+        "category": "Kernmodule",
+        "last_update": "2018-02-26"
+    },
+    "creator": {
+        "name": "Mattes Angelus",
+        "contact": "ma@glancr.de",
+        "website": "https:\/\/glancr.de",
+        "profile": "https:\/\/www.glancr.de\/profiles\/mattes"
+    }
+}

@@ -1,1 +1,0 @@
-<table id="calendar_week_table"></table>      

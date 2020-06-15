@@ -1,0 +1,59 @@
+# mirr.OS v0.1.2.
+# Copyright (C) 2016
+# This file is distributed under the same license as the PACKAGE package.
+# mattes <ma@glancr.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mirr.OS v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-23 19:02+0100\n"
+"PO-Revision-Date: 2018-02-23 19:02+0100\n"
+"Last-Translator: Tobias Grasse <tg@glancr.de>\n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: backend/template.php:16
+msgid "news_description"
+msgstr "Latest news from newsfeeds."
+
+#: backend/template.php:21
+msgid "enable glancrNews"
+msgstr "show glancr news"
+
+#: backend/template.php:26
+msgid "enable feedLogo"
+msgstr "show the website logo at the end of each headline"
+
+#: backend/template.php:42
+msgid ""
+"Paste a feed URL or enter a web address like <i>nytimes.com</i> to search "
+"for its main news feed"
+msgstr ""
+
+#: backend/template.php:43
+msgid "news feed url input"
+msgstr "News feed url input"
+
+#: backend/template.php:53
+msgid "validate"
+msgstr "validate"
+
+#: backend/template.php:54
+msgid "invalid feed url"
+msgstr "invalid feed url"
+
+#: frontend/template.php:1
+msgid "news_title"
+msgstr "News"
+
+#~ msgid "news example"
+#~ msgstr "(e.g.: http://rss.kicker.de/team/1fcunionberlin)"

@@ -11,7 +11,7 @@
 #
 # By default this script does nothing.
 
-xinit /home/pi/startBrowser.sh glancr/index.php -- -nocursor &
+xinit /usr/local/bin/startBrowser.sh glancr/index.php -- -nocursor &
 
 ###### shutdown- / reboot-button ######
 # /usr/bin/python /home/pi/buttons.py &
