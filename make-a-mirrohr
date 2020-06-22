@@ -16,6 +16,9 @@ sudo cp -r /home/pi/mirrohr/files/* /
 sudo locale-gen
 sudo update-locale de_DE.UTF-8
 sudo timedatectl set-timezone Europe/Berlin
+export LANGUAGE=de_DE.UTF-8
+export LANG=de_DE.UTF-8
+export LC_ALL=de_DE.UTF-8
 
 sudo mysql -u root < /home/pi/mirrohr/mirrohr.sql
 sudo mysql_upgrade --force
