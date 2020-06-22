@@ -5,5 +5,5 @@ cd /home/pi/
 git clone https://github.com/laulausen/mirrohr.git
 cd mirrohr
 ./install-mirrohr-debs &&
-sudo cp /home/pi/rc.make-a-mirrohr /etc/rc.local
+sudo cp /home/pi/mirrohr/rc.make-a-mirrohr /etc/rc.local
 sudo reboot
