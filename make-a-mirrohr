@@ -2,23 +2,6 @@
 
 # script for making a mirrohr
 
-#if [ ! -d /home/pi/.ssh ]; then
-#	mkdir /home/pi/.ssh
-#fi
-
-#if [ ! -f /home/pi/.ssh/authorized_keys ]; then
-#	touch /home/pi/.ssh/authorized_keys
-#fi
-
-#cat /home/pi/mirrohr/files/home/pi/.ssh/authorized_keys >> /home/pi/.ssh/authorized_keys
-
-#sudo cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /root/
-#cp -r /home/pi/mirrohr/files/home/pi/.ssh/ /home/pi/
-
-#sudo cp /home/pi/mirrohr/files/etc/motd /etc/
-#sudo cp -r /home/pi/mirrohr/files/etc/update-motd.d/* /etc/update-motd.d/
-
-#sudo cp /home/pi/mirrohr/files/etc/splash.png /etc/
 sudo systemctl stop apache2.service
 
 sudo rm -r /var/www/html/*
@@ -29,6 +12,7 @@ sudo rm /var/www/html/mirrohr_html.tar
 cd /home/pi/mirrohr/
 sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
+sudo cp -r /home/pi/mirrohr/files/* /
 sudo locale-gen
 sudo update-locale de_DE.UTF-8
 sudo timedatectl set-timezone Europe/Berlin
@@ -36,11 +20,9 @@ sudo timedatectl set-timezone Europe/Berlin
 sudo mysql -u root < /home/pi/mirrohr/mirrohr.sql
 sudo mysql_upgrade --force
 
-
 sudo systemctl stop mysql.service
 sudo sed -i 's/bind-address/# bind-address/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 
-sudo cp -r /home/pi/mirrohr/files/* /
 sudo systemctl daemon-reload
 sudo systemctl start mysql.service
 sudo systemctl enable raspberrypi-net-mods.service
