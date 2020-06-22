@@ -38,5 +38,5 @@ if [ ! -f /boot/wpa_supplicant.conf ]; then
 	sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /boot/
 fi
 sudo sh -c "echo 'CHROMIUM_FLAGS=\"\${CHROMIUM_FLAGS} --check-for-update-interval=31536000\"' >> /etc/chromium-browser/customizations/01-disable-update-check"
-sudo cp /etc/splash_1_right.png /etc/splash.png
+#sudo cp /etc/splash_1_right.png /etc/splash.png
 sudo reboot
