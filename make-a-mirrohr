@@ -4,11 +4,11 @@
 
 sudo systemctl stop apache2.service
 
-sudo rm -r /var/www/html/*
-sudo cp /home/pi/mirrohr/mirrohr_html.tar /var/www/html/
-cd /var/www/html/
+sudo rm -r /var/www/html
+sudo cp /home/pi/mirrohr/mirrohr_html.tar /var/www/
+cd /var/www/
 sudo tar -xpf mirrohr_html.tar
-sudo rm /var/www/html/mirrohr_html.tar
+sudo rm /var/www/mirrohr_html.tar
 cd /home/pi/mirrohr/
 sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
