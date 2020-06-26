@@ -23,7 +23,7 @@ def jetzt():
 def darfSchalten():
     result=0
     try:
-    	cnx = mysql.connector.connect(user='benutzer', password='password', host='localhost', database='DBName')
+    	cnx = mysql.connector.connect(user='mirrohr', password='mirrohr', host='localhost', database='mirrohr')
     	cursor = cnx.cursor(buffered=True)
     	statement="select wert from Flags where name like 'bewegung';"
         cursor.execute(statement)
@@ -38,7 +38,7 @@ def darfSchalten():
     return result
 
 
-print("gestartet")
+print("movement detection: started")
 
 try:
         while True:
@@ -46,7 +46,7 @@ try:
                 if GPIO.input(PIN):
 			# falls das display noch aus und das schalten erlaubt ist
 			if (display == 0 and darfSchalten() == 1):
-				print("display on")	# einschalten
+				print("movement detection: display on")	# einschalten
 				display = 1		# merken, dass das display jetzt an ist
 
 			letzte_bewegung = jetzt()	# den zeitpunkt der aktuellen bewegung merken
@@ -55,7 +55,7 @@ try:
 		elif (display == 1):
 			# wenn die zeitspanne seit der letzten bewegung die laenge der vorgegebenen pause erreicht hat und das schalten erlaubt ist
 			if (((jetzt() - letzte_bewegung) > Pause) and darfSchalten() == 1):
-				print("display off")	# ausschalten
+				print("movement detection: display off")	# ausschalten
 				display = 0		# merken, dass das display jetzt aus ist
 		time.sleep(0.5)
 

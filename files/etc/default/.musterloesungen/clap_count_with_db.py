@@ -12,8 +12,8 @@ PIN = 26
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIN,GPIO.IN)
 
-maxPause	=	300	# max Zeit in msec zwischen Klatschen
-soundDauer      =	50 	# max Dauer eines Klatschgeraeusches
+maxPause	=	400	# max Zeit in msec zwischen Klatschen
+soundDauer      =	80 	# max Dauer eines Klatschgeraeusches
 claps		=	0	# Zaehler
 erste_1		= 	0	# Zeitpunkt Geraeuschanfang
 letzte_1    	=  	0	# Zeitpunkt der letzten 1 am Sensor
@@ -49,7 +49,7 @@ jetzt		=	0	# Hifsvariable, um Zeit zu sparen
 def schaltberechtigungSetzen():
     # aktuellen wert lesen
     try:
-        cnx = mysql.connector.connect(user='benutzer', password='password', host='localhost', database='DBName')
+        cnx = mysql.connector.connect(user='mirrohr', password='mirrohr', host='localhost', database='mirrohr')
         cursor = cnx.cursor(buffered=True)
         statement="select wert from Flags where name like 'bewegung';"
         cursor.execute(statement)
@@ -69,7 +69,7 @@ def schaltberechtigungSetzen():
     except:
         print("Fehler in leseStatus:")
 
-print("gestartet")
+print("clap detection: started")
 letzte_1 = int(round(time.time() * 1000))	# muss so initialisiert werden, da sonst beim ersten Durchlauf staendig "0 mal geklatscht" ausgegeben werden wuerde
 
 while True:
@@ -104,7 +104,7 @@ while True:
 			#	UND es ist bis jetzt schon mehr zeit vergangen,
 			#	als die maximale pausenlaenge --> also wurde eine klatschsequenz beendet
 
-			print(str(claps) + " mal geklatscht")	# ausgabe
+			print("clap detection: clapped " + str(claps) + " times")	# ausgabe
 
 			if (claps == 2):
 				schaltberechtigungSetzen()
