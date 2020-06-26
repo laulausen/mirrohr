@@ -3,6 +3,7 @@
 wget https://github.com/laulausen/mirrohr/blob/master/musterloesungen.tar
 tar -xf musterloesungen.tar 
 rm musterloesungen.tar
+clear
 echo "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: "
 read pin_move
 echo "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: "
