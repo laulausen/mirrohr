@@ -46,6 +46,15 @@ jetzt		=	0	# Hifsvariable, um Zeit zu sparen
 #                                                                                                                                                  				#
 #################################################################################################################################################################################
 
+# Ausgabe auf allen Consolen
+def printToAllConsoles(text):
+	# zuerst Standardausgabe
+	print( text )
+	# dann Testen, wieviele Pseudoterminals existieren
+	for i in range(0,len( os.listdir( "/dev/pts/" )) - 1): if (os.path.exists( "/dev/pts/" + str(i))):
+		# und zum Schluss auf jedem Pseudoterminal ausgeben
+		os.system( "echo '" + text + "' > " + "/dev/pts/" + str(i)
+
 def schaltberechtigungSetzen():
     # aktuellen wert lesen
     try:
@@ -69,7 +78,7 @@ def schaltberechtigungSetzen():
     except:
         print("Fehler in leseStatus:")
 
-print("clap detection: started")
+printToAllConsoles("clap detection: started")
 letzte_1 = int(round(time.time() * 1000))	# muss so initialisiert werden, da sonst beim ersten Durchlauf staendig "0 mal geklatscht" ausgegeben werden wuerde
 
 while True:
@@ -104,7 +113,7 @@ while True:
 			#	UND es ist bis jetzt schon mehr zeit vergangen,
 			#	als die maximale pausenlaenge --> also wurde eine klatschsequenz beendet
 
-			print("clap detection: clapped " + str(claps) + " times")	# ausgabe
+			printToAllConsoles("clap detection: clapped " + str(claps) + " times")	# ausgabe
 
 			if (claps == 2):
 				schaltberechtigungSetzen()
