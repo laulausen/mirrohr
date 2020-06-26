@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget https://github.com/downloads/laulausen/mirrohr/musterloesungen.tar
+wget https://github.com/laulausen/mirrohr/blob/master/musterloesungen.tar
 tar -xf musterloesungen.tar  
 sudo sh -c 'echo "CREATE SCHEMA DBName;" | mysql -u root' 
 sudo sh -c 'echo "CREATE USER 'benutzer'@'localhost' IDENTIFIED BY 'password';" | mysql -u root'
