@@ -1,7 +1,14 @@
 #!/bin/bash
 
 wget https://github.com/laulausen/mirrohr/blob/master/musterloesungen.tar
-tar -xf musterloesungen.tar  
+tar -xf musterloesungen.tar 
+rm musterloesungen.tar
+echo "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: "
+read pin_move
+echo "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: "
+read pin_sound
+sudo sed -i "s|PIN = 26|PIN = $pin_move|g" /home/pi/.musterloesungen/movement_detection_with_db.py
+sudo sed -i "s|PIN = 26|PIN = $pin_sound|g" /home/pi/.musterloesungen/clap_count_with_db.py
 sudo sh -c 'echo "CREATE SCHEMA DBName;" | mysql -u root' 
 sudo sh -c 'echo "CREATE USER 'benutzer'@'localhost' IDENTIFIED BY 'password';" | mysql -u root'
 sudo sh -c 'echo "GRANT ALL PRIVILEGES ON DBName.* TO 'benutzer'@'localhost';" | mysql -u root' 
