@@ -25,13 +25,13 @@ sudo systemctl daemon-reload
 sudo systemctl start mysql.service
 sudo systemctl enable raspberrypi-net-mods.service
 sudo systemctl enable raspberrypi-static-net-mods.service
-sudo systemctl enable mirrohr-screen.service
+sudo systemctl enable mirrohr-screen.service &&
 
 
 echo "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: "
-read pin_move
+read pin_move &&
 echo "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: "
-read pin_sound
+read pin_sound &&
 
 sudo sed -i "s|PIN = 26|PIN = $pin_move|g" /etc/default/.musterloesungen/movement_detection_with_db.py
 sudo sed -i "s|PIN = 26|PIN = $pin_sound|g" /etc/default/.musterloesungen/clap_count_with_db.py
