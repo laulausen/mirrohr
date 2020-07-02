@@ -23,9 +23,9 @@ sudo cp -r /home/pi/mirrohr/files/* /
 
 sudo systemctl daemon-reload
 sudo systemctl start mysql.service
-sudo systemctl enable raspberrypi-net-mods.service
-sudo systemctl enable raspberrypi-static-net-mods.service
-sudo systemctl enable mirrohr-screen.service &&
+sudo systemctl enable raspberrypi-net-mods.service 
+sudo systemctl enable raspberrypi-static-net-mods.service 
+sudo systemctl enable mirrohr-screen.service 
 
 
 echo "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: "
@@ -44,8 +44,8 @@ sudo sed -i "s|PIN = 26|PIN = $pin_sound|g" /etc/default/.musterloesungen/clap_c
 sudo sh -c 'echo "CREATE TABLE mirrohr.Flags(name VARCHAR(45) NOT NULL, wert INT NOT NULL, PRIMARY KEY (name));" | mysql -u mirrohr -pmirrohr' 
 sudo sh -c 'echo "INSERT INTO mirrohr.Flags (name,wert) VALUES (\"bewegung\", 0);" | mysql -u mirrohr -pmirrohr' 
  
-sudo cp /etc/default/.musterlosungen/getState.php /var/www/html/modules/info/frontend/
-sudo cp /etc/default/.musterlosungen/script.js /var/www/html/modules/info/frontend/
+sudo cp /etc/default/.musterloesungen/getState.php /var/www/html/modules/info/frontend/
+sudo cp /etc/default/.musterloesungen/script.js /var/www/html/modules/info/frontend/
 sudo sed -i "s|exit 0||g" /etc/rc.local
 sudo sh -c 'echo "/usr/bin/python /etc/default/.musterloesungen/clap_count_with_db.py &" >> /etc/rc.local'
 sudo sh -c 'echo "/usr/bin/python /etc/default/.musterloesungen/movement_detection_with_db.py &" >> /etc/rc.local'
