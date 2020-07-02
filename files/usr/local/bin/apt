@@ -21,7 +21,8 @@ if [[ $arguments == *"upgrade"* ]]; then
 fi
 #echo $0 $1
 if [ $(whoami) = "root" ]; then
-	/usr/bin/apt "$arguments"
+	sh '/usr/bin/apt "$arguments"'
 else
 	echo "permissions denied"
+	exit
 fi
