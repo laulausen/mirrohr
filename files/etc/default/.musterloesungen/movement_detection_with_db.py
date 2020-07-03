@@ -21,9 +21,10 @@ def printToAllConsoles(text):
         # zuerst Standardausgabe
         print( text )
         # dann Testen, wieviele Pseudoterminals existieren
-        for i in range(0,len( os.listdir( "/dev/pts/" )) - 1): if (os.path.exists( "/dev/pts/" + str(i))):
-                # und zum Schluss auf jedem Pseudoterminal ausgeben
-                os.system( "echo '" + text + "' > " + "/dev/pts/" + str(i)
+        for i in range(0,len( os.listdir( "/dev/pts/" )) - 1): 
+		if (os.path.exists( "/dev/pts/" + str(i))):
+                	# und zum Schluss auf jedem Pseudoterminal ausgeben
+                	os.system( "echo '" + text + "' > " + "/dev/pts/" + str(i))
 
 # gibt Anzahl der seit 1.1.1979 vergangenen Millisekunden als int zurueck
 def jetzt():
