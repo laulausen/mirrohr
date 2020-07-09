@@ -3,8 +3,6 @@
 # Import der Python libraries
 import RPi.GPIO as GPIO
 import time
-import mysql.connector
-import os
 
 # GPIO definieren
 PIN = 26
@@ -13,13 +11,15 @@ PIN = 26
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIN,GPIO.IN)
 
-maxPause	=	400	# max Zeit in msec zwischen Klatschen
-soundDauer      =	80 	# max Dauer eines Klatschgeraeusches
+maxPause	=	300	# max Zeit in msec zwischen Klatschen
+soundDauer      =	50 	# max Dauer eines Klatschgeraeusches
 claps		=	0	# Zaehler
 erste_1		= 	0	# Zeitpunkt Geraeuschanfang
 letzte_1    	=  	0	# Zeitpunkt der letzten 1 am Sensor
 jetzt		=	0	# Hifsvariable, um Zeit zu sparen
 
+print("gestartet")
+letzte_1 = int(round(time.time() * 1000))	# muss so initialisiert werden, da sonst beim ersten Durchlauf staendig "0 mal geklatscht" ausgegeben werden wuerde
 
 #################################################################################################################################################################################
 #																						#
@@ -46,42 +46,6 @@ jetzt		=	0	# Hifsvariable, um Zeit zu sparen
 #			 letzte_1                                                                                                                                               #
 #                                                                                                                                                  				#
 #################################################################################################################################################################################
-
-# Ausgabe auf allen Consolen
-def printToAllConsoles(text):
-	# zuerst Standardausgabe
-	print( text )
-	# dann Testen, wieviele Pseudoterminals existieren
-	for i in range(0,len( os.listdir( "/dev/pts/" )) - 1): 
-		if (os.path.exists( "/dev/pts/" + str(i))):
-			# und zum Schluss auf jedem Pseudoterminal ausgeben
-			os.system( "echo '" + text + "' > " + "/dev/pts/" + str(i))
-
-def schaltberechtigungSetzen():
-    # aktuellen wert lesen
-    try:
-        cnx = mysql.connector.connect(user='benutzer', password='password', host='localhost', database='DBName')
-        cursor = cnx.cursor(buffered=True)
-        statement="select wert from Flags where name like 'bewegung';"
-        cursor.execute(statement)
-        rows = cursor.fetchall()
-        for row in rows:
-             result = int(row[0])
-	# wert umdrehen und setzen
-	if (result == 0):
-		result = 1
-	else:
-		result = 0
-	statement="update Flags set wert=" + str(result) + " where name like 'bewegung';"
-        cursor.execute(statement)
-        cnx.commit()
-        cursor.close()
-        cnx.close()
-    except:
-        print("Fehler in leseStatus:")
-
-printToAllConsoles("clap detection: started")
-letzte_1 = int(round(time.time() * 1000))	# muss so initialisiert werden, da sonst beim ersten Durchlauf staendig "0 mal geklatscht" ausgegeben werden wuerde
 
 while True:
 
@@ -115,11 +79,7 @@ while True:
 			#	UND es ist bis jetzt schon mehr zeit vergangen,
 			#	als die maximale pausenlaenge --> also wurde eine klatschsequenz beendet
 
-			printToAllConsoles("clap detection: clapped " + str(claps) + " times")	# ausgabe
-
-			if (claps == 2):
-				schaltberechtigungSetzen()
-
+			print(str(claps) + " mal geklatscht")	# ausgabe
 			letzte_1 = jetzt			# und initialen wert vergeben
 	time.sleep(0.001)
 

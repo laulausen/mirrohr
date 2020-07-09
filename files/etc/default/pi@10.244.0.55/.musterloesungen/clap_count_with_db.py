@@ -4,7 +4,6 @@
 import RPi.GPIO as GPIO
 import time
 import mysql.connector
-import os
 
 # GPIO definieren
 PIN = 26
@@ -60,7 +59,7 @@ def printToAllConsoles(text):
 def schaltberechtigungSetzen():
     # aktuellen wert lesen
     try:
-        cnx = mysql.connector.connect(user='benutzer', password='password', host='localhost', database='DBName')
+        cnx = mysql.connector.connect(user='mirrohr', password='mirrohr', host='localhost', database='mirrohr')
         cursor = cnx.cursor(buffered=True)
         statement="select wert from Flags where name like 'bewegung';"
         cursor.execute(statement)
