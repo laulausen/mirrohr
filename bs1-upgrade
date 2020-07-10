@@ -5,11 +5,9 @@ sudo apt install python-mysql.connector -y
 cd /home/pi/ &&
 git clone https://github.com/laulausen/mirrohr.git &&
 
-sudo cp -r /home/pi/mirrohr/files/etc/default/.musterloesungen /etc/default/
-echo "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: "
-read pin_move &&
-echo "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: "
-read pin_sound &&
+sudo cp -r /home/pi/mirrohr/files/etc/default/.musterloesungen /etc/default/ &&
+read -p "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: " pin_move &&
+read -p "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: " pin_sound &&
 
 sudo sed -i "s|PIN = 26|PIN = $pin_move|g" /etc/default/.musterloesungen/movement_detection_with_db.py
 sudo sed -i "s|PIN = 26|PIN = $pin_sound|g" /etc/default/.musterloesungen/clap_count_with_db.py
