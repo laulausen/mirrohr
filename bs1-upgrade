@@ -6,12 +6,6 @@ cd /home/pi/ &&
 git clone https://github.com/laulausen/mirrohr.git &&
 
 sudo cp -r /home/pi/mirrohr/files/etc/default/.musterloesungen /etc/default/ &&
-read -p "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: " pin_move &&
-read -p "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: " pin_sound &&
-
-sudo sed -i "s|PIN = 26|PIN = $pin_move|g" /etc/default/.musterloesungen/movement_detection_with_db.py
-sudo sed -i "s|PIN = 26|PIN = $pin_sound|g" /etc/default/.musterloesungen/clap_count_with_db.py
-
 
 sudo sh -c 'echo "CREATE SCHEMA DBName;" | mysql -u root' 
 sudo sh -c 'echo "CREATE USER \"benutzer\"@\"localhost\" IDENTIFIED BY \"password\";" | mysql -u root'
@@ -26,3 +20,9 @@ sudo sed -i "s|exit 0||g" /etc/rc.local
 sudo sh -c 'echo "/usr/bin/python /etc/default/.musterloesungen/clap_count_with_db.py &" >> /etc/rc.local'
 sudo sh -c 'echo "/usr/bin/python /etc/default/.musterloesungen/movement_detection_with_db.py &" >> /etc/rc.local'
 sudo sh -c 'echo "exit 0" >> /etc/rc.local'
+sleep 2
+read -p "Geben Sie den GPIO-PIN (bcm) fuer den Bewegungssensor an: " pin_move &&
+read -p "Geben Sie den GPIO-PIN (bcm) fuer den Soundsensor an: " pin_sound &&
+
+sudo sed -i "s|PIN = 26|PIN = $pin_move|g" /etc/default/.musterloesungen/movement_detection_with_db.py
+sudo sed -i "s|PIN = 26|PIN = $pin_sound|g" /etc/default/.musterloesungen/clap_count_with_db.py
